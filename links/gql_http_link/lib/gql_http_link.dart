@@ -6,3 +6,4 @@ export "package:gql_exec/gql_exec.dart"
     show HttpLinkResponseContext, HttpLinkHeaders;
 export "package:gql_http_link/src/exceptions.dart";
 export "package:gql_http_link/src/link.dart";
+export "package:gql_http_link/src/persisted_queries_link.dart";
