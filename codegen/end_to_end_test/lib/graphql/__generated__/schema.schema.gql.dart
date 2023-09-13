@@ -85,6 +85,48 @@ abstract class GColorInput implements Built<GColorInput, GColorInputBuilder> {
       );
 }
 
+abstract class GPostLikesInput
+    implements Built<GPostLikesInput, GPostLikesInputBuilder> {
+  GPostLikesInput._();
+
+  factory GPostLikesInput([Function(GPostLikesInputBuilder b) updates]) =
+      _$GPostLikesInput;
+
+  String get id;
+  static Serializer<GPostLikesInput> get serializer =>
+      _$gPostLikesInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GPostLikesInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPostLikesInput? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GPostLikesInput.serializer,
+        json,
+      );
+}
+
+abstract class GPostFavoritesInput
+    implements Built<GPostFavoritesInput, GPostFavoritesInputBuilder> {
+  GPostFavoritesInput._();
+
+  factory GPostFavoritesInput(
+      [Function(GPostFavoritesInputBuilder b) updates]) = _$GPostFavoritesInput;
+
+  String get id;
+  static Serializer<GPostFavoritesInput> get serializer =>
+      _$gPostFavoritesInputSerializer;
+  Map<String, dynamic> toJson() => (_i1.serializers.serializeWith(
+        GPostFavoritesInput.serializer,
+        this,
+      ) as Map<String, dynamic>);
+  static GPostFavoritesInput? fromJson(Map<String, dynamic> json) =>
+      _i1.serializers.deserializeWith(
+        GPostFavoritesInput.serializer,
+        json,
+      );
+}
+
 abstract class GISODate implements Built<GISODate, GISODateBuilder> {
   GISODate._();
 
@@ -96,6 +138,18 @@ abstract class GISODate implements Built<GISODate, GISODateBuilder> {
   static Serializer<GISODate> get serializer =>
       _i2.DefaultScalarSerializer<GISODate>(
           (Object serialized) => GISODate((serialized as String?)));
+}
+
+abstract class GJson implements Built<GJson, GJsonBuilder> {
+  GJson._();
+
+  factory GJson([String? value]) =>
+      _$GJson((b) => value != null ? (b..value = value) : b);
+
+  String get value;
+  @BuiltValueSerializer(custom: true)
+  static Serializer<GJson> get serializer => _i2.DefaultScalarSerializer<GJson>(
+      (Object serialized) => GJson((serialized as String?)));
 }
 
 const Map<String, Set<String>> possibleTypesMap = {
